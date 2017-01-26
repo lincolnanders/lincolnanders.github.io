@@ -1,9 +1,9 @@
 <html>
   <body>
-    <iframe scr="www.google.com" width="100%" height="500px"></iframe>
+    <embed src="www.google.com" width="100%" height="500px">
     <script>
-      var iframe = document.querySelectorAll("iframe")
-      var lat = iframe.innerHTML.getElementsByClassName("widget-reveal-card-lat-lng")[0].innerHTML.split(", ")[0]
+      var embed = document.querySelectorAll("iframe")
+      var lat = embed.innerHTML.getElementsByClassName("widget-reveal-card-lat-lng")[0].innerHTML.split(", ")[0]
       console.log(lat)
     </script>
   </body>
