@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html {
+	padding: 0px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+iframe {
+	width: 100%;
+}
+
+.problem * {
+	vertical-align: top;
+	clear: right;
+}
+
+.problem-img {
+	width: 300px;
+	clear: left;
+}
+
+.problem-body, .problem-solution {
+	padding: 10px;
+	width: 45%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.problem-body {
+	border-right: 1px solid black;
+	vertical-align: top;
+}
+
+.var {
+	color: #FF0000;
+	display: inline;
+}
+
+p {
+	margin: 2px;
+	padding: 2px;
+}
+
+bold {
+	font-weight: normal;
+	color: #ff0000;
+}
+
+
+

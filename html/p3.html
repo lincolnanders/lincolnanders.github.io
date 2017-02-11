@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+  <body>
+    <div class="problem-body">
+        <h2>Problem 3</h2>
+        <h3>Positive point charges are placed at three corners of a rectangle, as shown in the figure, in which d = <bold>0.48</bold> m. Take the +x-axis to point to the right.</h3>
+        <h4>(a) What is the electric field at the fourth corner?</h4>
+        <h5><bold>371021.8</bold> N/C at <bold>22.620</bold>&deg;, measured counterclockwise from the -x-axis</h5>
+        <h4>(b) A small object with a charge of <bold>+7.3</bold> &micro;C is placed at the fourth corner. What force acts on the object? </h4>
+        <h5><bold>2.709</bold> N at <bold>22.620</bold>&deg;, measured counterclockwise from the -x-axis</h5>
+        <img class="problem-img" src="http://www.webassign.net/grr/p16-26alt.gif" />
+      </div>
+      <div class="problem-solution">
+        <h2>Solution 3</h2>
+        d (in m): <input type="text" id="q3-1" placeholder="0.48" />
+        <br />
+        q (in &micro;C): <input type="text" id="q3-2" placeholder="7.3" />
+        <br /><br />
+        <p>Final Answers: </p>
+        <p id="3-1"></p>
+        <p id="3-2"></p>
+        <script>
+        	var in1 = document.getElementById("q3-1"); // q
+			var in2 = document.getElementById("q3-2");
+
+			var k = 8.99 * Math.pow(10, 9);
+			var q = 1.602 * Math.pow(10, -19);
+
+			function round(input, numDec) {
+			  return input.toFixed(numDec);
+			}
+
+			function updateX() {
+				var ef = 0, angle = 0;
+
+			  var q1 = 1 * Math.pow(10, -6), q2 = 4 * Math.pow(10, -6), q3 = 6 * Math.pow(10, -6), q4 = in2.value * Math.pow(10, -6);
+
+			  var hyp = Math.sqrt( Math.pow(0.2, 2) + Math.pow(in1.value,2) );
+			  var f1 = k * q1 / Math.pow(0.2, 2);
+			  var f2 = k * q2 / Math.pow(in1.value, 2);
+			  var f3 = k * q3 / Math.pow(hyp, 2);
+			  var angle = Math.atan(0.2/in1.value);
+			  var fx = f2 + f3 * Math.cos(angle);
+			  var fy = f1 - f3 * Math.sin(angle);
+			  var f = Math.sqrt( Math.pow(fx, 2) + Math.pow(fy, 2) );
+
+			  document.getElementById("3-1").innerHTML = "<bold>" + round(f, 3) + "</bold> N/m at " + round(angle * 180 / Math.PI, 3) + "&deg;";
+
+			  f1 = k * q1 * q4 / Math.pow(0.2, 2);
+			  f2 = k * q2 * q4 / Math.pow(in1.value, 2);
+			  f3 = k * q3 * q4 / Math.pow(hyp, 2);
+			  fx = f2 + f3 * Math.cos(angle);
+			  fy = f1 - f3 * Math.sin(angle);
+			  f = Math.sqrt( Math.pow(fx, 2) + Math.pow(fy, 2) );
+
+			  document.getElementById("3-2").innerHTML = "<bold>" + round(f, 3) + "</bold> N/m at " + round(angle * 180 / Math.PI, 3) + "&deg;";
+			}
+
+			in1.addEventListener('input', function() {
+			  updateX();
+			});
+
+			in2.addEventListener('input', function() {
+			  updateX();
+			});
+        </script>
+      </div>
+
+  </body>
+</html>
