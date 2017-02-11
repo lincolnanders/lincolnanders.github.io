@@ -1,87 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-    	body, html {margin: 0px; padding: 0px;}
-       #map {
-        height: 400px;
-        width: 1000px;
-       }
-    </style>
-  </head>
-  <body onkeypress="myFunction(event)">
-  	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnKyu5nSAVvOxJjci_lnZbGdrMBGS9YbA&callback=initMap">
-    </script>
-	<div id="map"></div>
     <script>
-      	var map;
-
-		function initMap() {
-		  map = new google.maps.Map(document.getElementById('map'), {
-		    center: {
-		      lat: 42,
-		      lng: -72
-		    },
-		    zoom: 8
-		  });
-		}
-
-		function myFunction(e) {
-			var lat1 = map.getBounds().getNorthEast().lat();
-			var lat2 = map.getBounds().getSouthWest().lat();
-			var long1 = map.getBounds().getNorthEast().lng();
-			var long2 = map.getBounds().getSouthWest().lng();
-			var x, y;
-			onmousemove = function(e){ x = e.clientX; y = e.clientY}
-			console.log(e.clientX);
-		    console.log(x*(lat1 - lat2)/1000);
-		    console.log(y*(long1 - long2)/1000);
-		    //41.178325,-75.47168,42.811201,-68.52832
-
-		}
-
-	    //
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 20 + 'px';
+      }
     </script>
-    
-  </body>
-</html>
-
-<!--<html>
-	<head>
-	    <style>
-	       #map {
-	        height: 400px;
-	        width: 100%;
-	       }
-	    </style>
+    <title>WebAssign - February 9</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <iframe id="mapsFrame" src="https://maps.google.com/maps?output=embed" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    <div id="map"></div>
-    <button onclick="javascript:helloWorld(event)">Try Me</button>
-    
-	  */
-      //var embed = document.querySelectorAll("iframe")
-      //var lat = embed.innerHTML.getElementsByClassName("widget-reveal-card-lat-lng")[0].innerHTML.split(", ")[0]
-      //console.log(lat)
-
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_FJp9CAisgB9mxnNxYrQggnDA1ZVthJk&callback=initMap">
-    </script>
+    <h1>WebAssign - February 9</h1>
+    <p>I just made this, use it if you want. I don't care. <bold>Use all positive values, and no scientific answers</bold>. Just follow the instructions in the parenthesis. All the values pre-filled in are the values from my problems. Just follow the pattern there with your values and it'll do the rest.</p>
+    <p>-Lincoln</p>
+    <iframe class="problem" src="html/p1.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <iframe class="problem" src="html/p2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <iframe class="problem" src="html/p3.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <iframe class="problem" src="html/p4.html" frameborder="0" height="270px" ></iframe>
+    <iframe class="problem" src="html/p5.html" frameborder="0" height="300px"></iframe>
+    <iframe class="problem" src="html/p6.html" frameborder="0" height="300px"></iframe>
   </body>
 </html>
--->
