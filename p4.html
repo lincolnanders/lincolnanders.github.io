@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+  <body>
+    <div class="problem-body">
+        <h2>Problem 4</h2>
+        <h3>What are the magnitude and direction of the electric field midway between two point charges, -<bold>14</bold> &micro;C and +<bold>15</bold> &micro;C, that are <bold>8.6</bold> cm apart?</h3>
+        <h4><bold>1.41e8</bold> N/C directed <bold>towards</bold> the -14 &micro;C charge</h4>
+      </div>
+      <div class="problem-solution">
+        <h2>Solution 4</h2>
+        q1 (in &micro;C): <input type="text" id="q7-1" placeholder="14" />
+        <br />
+        q2 (in &micro;C): <input type="text" id="q7-2" placeholder="15" />
+        <br />
+        d (in cm): <input type="text" id="q7-3" placeholder="8.6" />
+        <br /><br />
+        <p>Final Answers: </p>
+        <p id="7-1"></p>
+        <p id="7-2"></p>
+        <script>
+        	var in1 = document.getElementById("q7-1"); // q
+			var in2 = document.getElementById("q7-2");
+			var in3 = document.getElementById("q7-3");
+
+			var k = 8.99 * Math.pow(10, 9);
+			var q = 1.602 * Math.pow(10, -19);
+
+			function round(input, numDec) {
+			  return input.toFixed(numDec);
+			}
+
+			function updateX() {
+				var f = 0.0;
+			  var e = k / Math.pow(in3.value / 2 * 0.01,2) * (Math.pow(10, -6) * in1.value + Math.pow(10, -6) * in2.value);
+
+			  document.getElementById("7-1").innerHTML = "<bold>" + round(e, 3) + "</bold> N/m";
+			}
+
+			in1.addEventListener('input', function() {
+			  updateX();
+			});
+
+			in2.addEventListener('input', function() {
+			  updateX();
+			});
+
+			in3.addEventListener('input', function() {
+			  updateX();
+			});
+        </script>
+      </div>
+    
+  </body>
+</html>

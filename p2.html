@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+  <body>
+    <div class="problem-body">
+      <h2>Problem 2</h2>
+      <h3>A tiny sphere with a charge of q = <bold>+5.7</bold> &micro;C is attached to a spring. Two other tiny charged spheres, each with a charge of -4.0 &micro;C, are placed in the positions shown in the figure, in which b = <bold>3.9</bold> cm. The spring stretches 5.0 cm from its previous equilibrium position toward the two spheres. Calculate the spring constant.</h3>
+      <h4><bold>3797.74</bold> N/m</h4>
+      <img class="problem-img" src="http://www.webassign.net/grr/p16-16alt.gif" />
+    </div>
+    <div class="problem-solution">
+      <h2>Solution 2</h2>
+      q (in &micro;C): <input type="text" name="q1-1" id="q2-1" placeholder="5.7" />
+      <br />
+      b (in cm): <input type="text" name="q1-2" id="q2-2" placeholder="3.9" />
+      <br /><br />
+      <p>Final Answer: </p>
+      <p id="2-fy"></p>
+      <script>
+        var in1 = document.getElementById("q2-1"); // q
+        var in2 = document.getElementById("q2-2"); // b
+
+        var k = 8.99 * Math.pow(10, 9);
+        var q = 1.602 * Math.pow(10, -19);
+
+
+        function round(input, numDec) {
+          return input.toFixed(numDec);
+        }
+
+        var t1 = 0, t2 = 0;
+
+        function updateX() {
+          var q1 = in1.value * Math.pow(10, -6);
+          var q2 = 4 * Math.pow(10, -6);
+          var ang = Math.atan(in2.value / 2);
+          var dist = Math.sqrt( Math.pow(0.02,2) + Math.pow(in2.value * 0.01,2) )
+          var f = k * q1 * q2 / Math.pow(dist, 2);
+          var finalAngle = (90 - ang*180/Math.PI) * Math.PI / 180;
+          var fy = 2 * f * Math.cos(finalAngle);
+
+          document.getElementById("2-fy").innerHTML = "<bold>" + round(fy / 0.05, 3) + "</bold> N/m";
+        }
+
+        in1.addEventListener('input', function() {
+          updateX();
+        });
+
+        in2.addEventListener('input', function() {
+          updateX();
+});
+      </script>
+    </div>
+  </body>
+</html>

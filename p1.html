@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+  <body>
+    <div class="problem-body">
+      <h2>Problem 1</h2>
+      <h3>Three point charges are fixed in place in the right triangle diagrammed below, in which q1 = <div class="var">0.83</div> &micro;C and q2 = <div class="var">-0.65</div> &micro;C. What is the electric force on the +1.0 &micro;C charge due to the other two charges? </h3>
+      <h4>1.3184 N at 207.3673&deg;, measured counterclockwise from the +x-axis</h4>
+      <img class="problem-img" src="http://www.webassign.net/grr/p16-15alt.gif" />
+    </div>
+    <div class="problem-solution">
+      <h2>Solution 1</h2>
+      Q1 (in &micro;C): <input type="text" name="q1-1" id="q1-1" placeholder="0.83" />
+      <br />
+      Q2 (in &micro;C): <input type="text" name="q1-2" id="q1-2" placeholder="0.65" />
+      <br /><br />
+      <p id="f1"></p>
+      <p id="f2"></p>
+      <p id="ex"></p>
+      <p id="ey"></p>
+      <br />
+      <p>Final Answers: </p>
+      <p id="e"></p>
+      <p id="deg"></p>
+      <script>
+        var q1 = document.getElementById("q1-1");
+        var q2 = document.getElementById("q1-2");
+
+        var k = 8.99 * Math.pow(10, 9);
+        var q = 1.602 * Math.pow(10, -19);
+
+        function round(input, numDec) {
+          return input.toFixed(numDec);
+        }
+
+        var t1 = 0, t2 = 0;
+
+        function updateX() {
+          var ex = round(t1 * Math.sin(Math.acos(8/10)) - t2, 4);
+          var ey = round(t1 * Math.cos(Math.acos(8/10)), 4);
+          var deg = round(180 + Math.asin(Math.abs(t1/t2)) * 180 / Math.PI, 4);
+          document.getElementById("ex").innerHTML = "&Sigma;Fx = F1sin(&theta;) - F2 = " + ex + " N";
+          document.getElementById("ey").innerHTML = "&Sigma;Fy = F1cos(&theta;) = " + ey + " N";
+          document.getElementById("e").innerHTML = "&radic;(Fx^2 + Fy^2) = <bold>" + round( Math.sqrt( Math.pow(ex, 2) + Math.pow(ey, 2)), 4) + " N</bold>";
+          document.getElementById("deg").innerHTML = "<bold>" + deg + "&deg;</bold>";
+        }
+
+        q1.addEventListener('input', function() {
+          var f1 = k * 1 * Math.pow(10, -6) * q1.value * Math.pow(10,-6) / Math.pow(0.1,2); //0.7461
+          t1 = f1
+          document.getElementById("f1").innerHTML = "F1 = k (+1 &micro;C) (" + q1.value + ") / 10^2 cm = " + round(f1, 4) + " N";
+          updateX();
+        });
+
+        q2.addEventListener('input', function() {
+          var f2 = k * 1 * Math.pow(10, -6) * q2.value * Math.pow(10,-6) / Math.pow(0.06,2); //0.7461
+          t2 = f2
+          document.getElementById("f2").innerHTML = "F2 = k (+1 &micro;C) (" + q2.value + ") / 6^2 cm = " + round(f2, 4) + " N";
+          updateX();
+        });
+
+        var f1 = k * 1 * Math.pow(10, -6) * 0.83 * Math.pow(10,-6) / Math.pow(0.1,2); //0.7461
+        t1 = f1
+        document.getElementById("f1").innerHTML = "F1 = k (+1 &micro;C) (" + 0.84 + ") / 10^2 cm = " + round(f1, 4) + " N";
+        updateX();
+
+        var f2 = k * 1 * Math.pow(10, -6) * 0.65 * Math.pow(10,-6) / Math.pow(0.06,2); //0.7461
+        t2 = f2
+        document.getElementById("f2").innerHTML = "F2 = k (+1 &micro;C) (" + 0.65 + ") / 6^2 cm = " + round(f2, 4) + " N";
+        updateX();
+      </script>
+    </div>
+  </body>
+</html>
