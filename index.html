@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      function resizeIframe(obj) {
-        obj.style.height = obj.contentWindow.document.body.scrollHeight + 20 + 'px';
-      }
-    </script>
     <title>WebAssign - February 9</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
@@ -13,11 +8,84 @@
     <h1>WebAssign - February 9</h1>
     <p>I just made this, use it if you want. I don't care. <bold>Use all positive values, and no scientific answers</bold>. Just follow the instructions in the parenthesis. All the values pre-filled in are the values from my problems. Just follow the pattern there with your values and it'll do the rest.</p>
     <p>-Lincoln</p>
-    <iframe class="problem" src="html/p1.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
-    <iframe class="problem" src="html/p2.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
-    <iframe class="problem" src="html/p3.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
-    <iframe class="problem" src="html/p4.html" frameborder="0" height="270px" ></iframe>
-    <iframe class="problem" src="html/p5.html" frameborder="0" height="300px"></iframe>
-    <iframe class="problem" src="html/p6.html" frameborder="0" height="300px"></iframe>
+    <table>
+      <tr>
+        <td width="70%">
+          <h1>Question 1</h1>
+          <p>Consider the circuit below, in which I = <b>2.5</b> A. What is the power dissipated by the resistor if the emf is <b>2.70</b> V?</p>
+          <br>
+          <p>I = </p><input id="1.1" type="text" placeholder="2.5" />
+          <p>A = </p><input id="1.2" type="text" placeholder="2.7" />
+        </td>
+        <td>
+          <h1>Answer 1</h1>
+          <p class="ans" id="ans1">6.75</p><p class="units">W</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1>Question 2</h1>
+          <p>Three identical lightbulbs are connected with wires to an ideal battery. The two terminals on each socket connect to the two terminals of its lightbulb. Wires do not connect with one another where they appear to cross in the picture. Neglect the change of the resistances of the filaments due to temperature changes.</p>
+          <br />
+          <p>A. Select all of the schematic circuit diagrams above which correctly represent the circuit.</p>
+          <br />
+          <p>B. Select the bulb(s) which is/are the brightest and the bulb(s) which is/are the dimmest. Explain.</p>
+          <br />
+          <p>C. Find the current through each bulb if the filament resistances are each <b>26.0</b>  and the emf is <b>7.0</b> V.</p>
+          <br />
+          <p>R = </p><input id="2.1" type="text" placeholder="26" />
+          <p>V = </p><input id="2.2" type="text" placeholder="7" />
+        </td>
+        <td>
+          <h1>Answer 2</h1>
+          <p>A. a, e, and f</p>
+          <p>B. Brightest: 3. Dimmest: 1 and 2. Since bulb 3 is in parallel with the series combination of bulbs 1 and 2, the voltage drop across bulb 3 is the same as that of the series combination. P = V2/R, and the light bulbs are identical (R1 = R2 = R3 = R). If the potential across the battery is e m f, the power dissipated in bulb 3 is P3 = e m f2/R. The voltage is dropped by half across each bulb in the series combination, since they are identical. So, P1 = P2 = (e m f/2)2/R = e m f2/(4R) = P3/4.
+          <p class="ans" id="ans2.1">0.135</p><p class="units">A</p>
+          <p class="ans" id="ans2.2">0.135</p><p class="units">A</p>
+          <p class="ans" id="ans2.3">0.269</p><p class="units">A</p>
+        </td>
+      </tr>
+      <tr>
+        <td width="70%">
+          <h1>Question 3</h1>
+          <p>Consider the circuit in the diagram below, in which R = <b>4.8</b>.</p>
+          <br>
+          <p>A. Find the equivalent resistance between points A and B.</p>
+          <p>B. What is the potential difference across each of the <b>4.8</b> ohm resistors, if a <b>14</b> V emf is connected to the terminals A and B as shown above?</p> 
+          <p>C. What is the current in the 3.0 ohm resistor in this case?</p>
+          <br />
+          <p>R = </p><input id="3.1" type="text" placeholder="4.8" />
+          <p>V = </p><input id="3.2" type="text" placeholder="14" />
+        </td>
+        <td>
+          <h1>Answer 3</h1>
+          <p class="ans" id="ans3.1"></p>
+          <br />
+          <p class="ans" id="ans3.2"></p>
+          <br />
+          <p class="ans" id="ans3.3"></p>
+        </td>
+      </tr>
+      <tr>
+        <td width="70%">
+          <h1>Question 4</h1>
+          <p>Find the equivalent resistance between terminals A and B to replace all of the resistors in the diagram, in which R = <b>1.55</b>.</p>
+          <p>If a <b>6.5</b> V emf is connected to the terminals A and B, what current flows through the emf source? 
+          <p>What is the current through the 4.00  resistor at the bottom? </p>
+          <br />
+          <p>R = </p><input id="4.1" type="text" value="1.55" placeholder="1.55" />
+          <p>V = </p><input id="4.2" type="text" value="6.5" placeholder="6.5" />
+        </td>
+        <td>
+          <h1>Answer 4</h1>
+          <p class="ans" id="ans4.1"></p>
+          <br />
+          <p class="ans" id="ans4.2"></p>
+          <br />
+          <p class="ans" id="ans4.3"></p>
+        </td>
+      </tr>
+    </table>
+    <script src="ans.js"></script>
   </body>
 </html>
