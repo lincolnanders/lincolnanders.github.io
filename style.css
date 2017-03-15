@@ -42,12 +42,15 @@ iframe {
 p {
 	margin: 2px;
 	padding: 2px;
+<<<<<<< HEAD
 	display: inline-block;
 }
 
 input {
 	display: inline-block;
 	vertical-align: baseline;
+=======
+>>>>>>> 768ec70882c0743d12d3074451c6a1b57bf94215
 }
 
 bold {
@@ -55,6 +58,7 @@ bold {
 	color: #ff0000;
 }
 
+<<<<<<< HEAD
 h1 {
 	padding: 0px;
 	margin: 0px;
@@ -86,4 +90,7 @@ b {
 	font-weight: normal;
 	color: #FF0000;
 }
+=======
+
+>>>>>>> 768ec70882c0743d12d3074451c6a1b57bf94215
 
